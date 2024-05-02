@@ -1,0 +1,139 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+body {
+  background-color: #221f1f !important;
+}
+
+.section-title {
+  color: #f5f5f1;
+}
+
+.footer-links > a {
+  color: #949494;
+}
+
+.footer-links > a:hover {
+  color: #ffffff;
+}
+
+.movie-poster {
+  max-height: 320px;
+}
+
+.movie-poster:hover {
+  transform: scale(1.05);
+}
+
+#profile-body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-section-container {
+  h4 {
+    font-size: 1.2rem;
+    color: #adb5bd;
+    margin-block-start: 1.2rem;
+  }
+}
+
+.maturity-settings-container {
+  .dropdown {
+    button {
+      color: white;
+      margin-block: 1rem;
+    }
+  }
+}
+
+.profile-img-container > img {
+  max-width: 80%;
+}
+
+.autoplay-controls-container {
+  label {
+    font-size: 0.9rem;
+  }
+}
+
+.form-check-input {
+  box-shadow: none;
+  border: 1px solid #343a40;
+  border-radius: 1px;
+  padding: 15px;
+  margin-inline-end: 15px;
+  &:checked {
+    box-shadow: none;
+    border: 1px solid #343a40;
+  }
+  &:focus {
+    box-shadow: none;
+    border: 1px solid #343a40;
+  }
+  &:active {
+    box-shadow: none;
+    border: 1px solid #343a40;
+  }
+}
+
+.form-check:nth-of-type(1) {
+  margin-block-end: 0.3rem;
+}
+
+.edit-title-container {
+  h1 {
+    margin-bottom: -20px;
+    font-size: 3rem;
+    font-weight: 400;
+  }
+}
+
+.pencil-container {
+  position: relative;
+  top: -32px;
+  right: -5px;
+  border-radius: 50%;
+  padding-block: 0;
+  padding-inline: 7px;
+  background-color: black;
+  border: 1px solid white;
+}
