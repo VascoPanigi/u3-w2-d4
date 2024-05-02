@@ -2,6 +2,8 @@ import { Container, Nav, Navbar } from "react-bootstrap";
 import logo from "../assets/logo.png";
 import { BiSearch, BiBell, BiUserCircle } from "react-icons/bi";
 
+import { NavLink } from "react-router-dom";
+
 const MyNavbar = () => (
   <Navbar expand="lg" className="my-navbar" data-bs-theme="dark" style={{ backgroundColor: "#221f1f" }}>
     <Container fluid className="ms-2 me-2">
@@ -14,9 +16,9 @@ const MyNavbar = () => (
           <Nav.Link href="#home" className="fw-bold">
             Home
           </Nav.Link>
-          <Nav.Link href="#tvshows" className="fw-bold">
-            TV Shows
-          </Nav.Link>
+          <NavLink to="/TVShows" className="nav-link">
+            TV shows
+          </NavLink>
           <Nav.Link href="#movies" className="fw-bold">
             Movies
           </Nav.Link>
