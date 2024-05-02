@@ -1,19 +1,45 @@
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+
 import { Container, Row, Col, ListGroup } from "react-bootstrap";
 
 const MovieDetails = () => {
+  const params = useParams();
+  const dynamicID = params.dynamicId;
+  console.log(params.dynamicId);
+
+  const [movieData, setMovieData] = useState(null);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch(`http://www.omdbapi.com/?apikey=f56391e1&i=${dynamicID}`);
+        if (response.ok) {
+          const data = await response.json();
+          setMovieData(data);
+          console.log(movieData);
+        } else {
+          throw new Error("Error fetching data");
+        }
+      } catch (error) {
+        console.error("Error fetching data:", error.message);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  if (!movieData) {
+    return <p>Loading...</p>;
+  }
+
   return (
     <Container className="text-white">
       <Row>
         <Col>
-          <h1>Nome film</h1>
-          <img
-            src={
-              "https://plus.unsplash.com/premium_photo-1675721844800-b305b0f888ff?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            }
-            alt={"ciao"}
-            style={{ width: "250px" }}
-          />
-          <h3>anno</h3>
+          <h1>{movieData.Title}</h1>
+          <img src={movieData.Poster} alt={`${movieData.Title} poster`} style={{ width: "250px" }} />
+          <h3>{movieData.Year}</h3>
           <h3>genere</h3>
         </Col>
       </Row>
