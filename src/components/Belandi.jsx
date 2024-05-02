@@ -2,7 +2,7 @@
 
 const Belandi = () => {
   // const navigate = useNavigate();
-  return <h1>Sad Gabibbo dance...</h1>;
+  return <h1 className="text-white">Wrong address :( </h1>;
 };
 
 export default Belandi;
